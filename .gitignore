@@ -21,5 +21,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/.idea/vcs.xml
-/.idea/workspace.xml
+/.idea/**
+/**/.gradle/**
+/build/tmp/compileJava/previous-compilation-data.bin
+/build/tmp/compileJava/compileTransaction/stash-dir/News.class.uniqueId1
+/.gradle/7.6/executionHistory/executionHistory.bin
+/build/tmp/compileJava/compileTransaction/stash-dir/NewsRepository.class.uniqueId0
+/build/tmp/compileJava/compileTransaction/stash-dir/NewsController.class.uniqueId2
+/.gradle/7.6/fileHashes/fileHashes.bin
+/build/tmp/compileJava/compileTransaction/stash-dir/NewsService.class.uniqueId3
+/.gradle/buildOutputCleanup/outputFiles.bin
+/.gradle/7.6/fileHashes/resourceHashesCache.bin
+/build/resources/main/application.properties
