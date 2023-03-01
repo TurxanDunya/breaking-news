@@ -20,7 +20,7 @@ public class NewsService {
     }
 
     public void add(News news) {
-        newsRepository.save(news);
+         newsRepository.save(news);
     }
 
     public List<NewsDto> findNews() {
