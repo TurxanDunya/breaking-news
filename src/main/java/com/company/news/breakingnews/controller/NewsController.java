@@ -33,8 +33,13 @@ public class NewsController {
     }
 
     @PutMapping(value = "/{id}")
-    public void update(@PathVariable Integer id, @RequestBody NewsDto newsDto){
-        newsService.update(id,newsDto);
+    public void update(@PathVariable Integer id, @RequestBody NewsDto newsDto) {
+        newsService.update(id, newsDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete (@PathVariable Integer id){
+        newsService.delete(id);
     }
 
 

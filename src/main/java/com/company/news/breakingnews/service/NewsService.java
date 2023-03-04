@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class NewsService {
+public class  NewsService {
     private final NewsRepository newsRepository;
     private final NewsMapper newsMapper;
 
@@ -63,6 +63,10 @@ public class NewsService {
         }
 
         newsRepository.save(news);
+    }
+
+    public void delete (Integer id ){
+        newsRepository.delete(findById(id));
     }
 
 
