@@ -9,8 +9,6 @@ import java.util.List;
 
 @Component
 public class NewsMapper {
-
-
     public List<NewsDto> mapper(List<News> news) {
         List<NewsDto> newsDtoList = new ArrayList<>();
         for (News currentNews : news) {

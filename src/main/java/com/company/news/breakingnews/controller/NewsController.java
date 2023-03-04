@@ -17,8 +17,8 @@ public class NewsController {
         this.newsService = newsService;
     }
 
-    @GetMapping
-    public News findById(Integer id) {
+    @GetMapping("/{id}")
+    public News findById(@PathVariable Integer id) {
         return newsService.findById(id);
     }
 
@@ -31,4 +31,11 @@ public class NewsController {
     public List<NewsDto> findNews() {
         return newsService.findNews();
     }
+
+    @PutMapping(value = "/{id}")
+    public void update(@PathVariable Integer id, @RequestBody NewsDto newsDto){
+        newsService.update(id,newsDto);
+    }
+
+
 }
