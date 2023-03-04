@@ -7,6 +7,7 @@ import com.company.news.breakingnews.repository.NewsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NewsService {
@@ -19,8 +20,17 @@ public class NewsService {
         this.newsMapper = newsMapper;
     }
 
+    public News findById(Integer id) {
+        Optional<News> newsById = newsRepository.findById(id);
+        if (newsById.isPresent()) {
+            return newsById.get();
+        }
+
+        throw new RuntimeException("News not found!");
+    }
+
     public void add(News news) {
-         newsRepository.save(news);
+        newsRepository.save(news);
     }
 
     public List<NewsDto> findNews() {
