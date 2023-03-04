@@ -6,12 +6,13 @@ import com.company.news.breakingnews.mapper.NewsMapper;
 import com.company.news.breakingnews.repository.NewsRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
 public class NewsService {
-
     private final NewsRepository newsRepository;
     private final NewsMapper newsMapper;
 
@@ -37,4 +38,33 @@ public class NewsService {
         List<News> newsList = newsRepository.findAll();
         return newsMapper.mapper(newsList);
     }
+
+    public void update(Integer id, NewsDto newsDto){
+        News news = findById(id);
+
+        String head = newsDto.getHead();
+        if(Objects.nonNull(head)){
+            news.setHead(head);
+        }
+
+        String body = newsDto.getBody();
+        if(Objects.nonNull(body)){
+            news.setBody(body);
+        }
+
+        LocalDate createdDate = newsDto.getCreatedDate();
+        if(Objects.nonNull(createdDate)) {
+            news.setCreatedDate(createdDate);
+        }
+
+        Integer readCount = newsDto.getReadCount();
+        if(Objects.nonNull(readCount)) {
+            news.setReadCount(readCount);
+        }
+
+        newsRepository.save(news);
+    }
+
+
+
 }
