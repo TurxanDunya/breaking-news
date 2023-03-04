@@ -17,13 +17,18 @@ public class NewsController {
         this.newsService = newsService;
     }
 
+    @GetMapping
+    public News findById(Integer id) {
+        return newsService.findById(id);
+    }
+
     @PostMapping
     public void add(@RequestBody News news) {
         newsService.add(news);
     }
 
     @GetMapping
-    public List<NewsDto> findNews(){
+    public List<NewsDto> findNews() {
         return newsService.findNews();
     }
 }
